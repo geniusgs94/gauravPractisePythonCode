@@ -1,0 +1,29 @@
+''' written a code that fetches csv from a txt file and check whether they are even or odd numbers'''
+
+
+
+'''
+input=
+
+1,32,675,2,45, 67, 78
+
+'''
+import os
+os.chdir('C:\\Users\Acer\Desktop')
+with open('gaurav python.txt','r+') as fd:
+    data=fd.read()
+num=''
+L=[]
+for i in range(len(data)):
+    if data[i]==',' or data[i]=='\n':
+        L.append(int(num))
+        num=''
+    else:
+        num+=data[i]
+print(' the list of numbers fetched from txt files is {}'.format(L))
+count=0
+for val in L:
+    if val % 2 == 0:
+        print(val)
+        count+=1
+print('the total nunber of even values in the text files are {}'.format(count))
